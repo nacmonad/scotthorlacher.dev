@@ -1,0 +1,19 @@
+.BaseLayer {
+	z-index:10;
+	height:100%;
+	width:100%;
+	box-shadow:	2px 0px 5px 0px rgba(50, 50, 50, 0.75);
+
+}
+.Layer {
+	height:100%;
+	width:3rem;
+	box-shadow:	2px 0px 5px 0px rgba(50, 50, 50, 0.75);
+	transition: width 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.Open {
+	width:100vw !important; 
+}
+.Closed {
+	width:3rem;
+}
