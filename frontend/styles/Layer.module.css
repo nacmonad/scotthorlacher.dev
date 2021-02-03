@@ -1,3 +1,4 @@
+
 .BaseLayer {
 	z-index:10;
 	height:100%;
@@ -16,4 +17,64 @@
 }
 .Closed {
 	width:3rem;
+}
+
+
+.contentRoot {
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+	height:100%;
+	width:100%;
+	color:white;
+}
+.cvButton {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	height:4rem;
+	color: green;
+	font-weight:800;
+	font-size:2rem;
+	background-color:rgba(255,255,255,0.8);
+	padding:1rem 2rem;
+	border-radius:2rem;
+	transition: all 0.2s linear;
+	cursor:pointer;
+}
+.cvButton i {
+	padding: 0 0 0 1rem;
+}
+.emailButton {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	height:4rem;
+	color: blue;
+	font-weight:800;
+	font-size:2rem;
+	background-color:rgba(255,255,255,0.8);
+	padding:1rem 2rem;
+	border-radius:2rem;
+	transition: all 0.2s linear;
+	cursor:pointer;
+}
+.cvButton:hover {
+	background-color:rgba(255,255,255,1);
+}
+.emailButton:hover {
+	background-color:rgba(255,255,255,1);
+}
+
+.skillsContainer {
+	width:100%;
+	padding: 0 4rem;
+}
+
+.divider {
+	width:100%;
+	background-color:white;
+	height:0.125rem;
+	border-radius:0.06125rem;
 }

@@ -2,7 +2,9 @@
 import Head from 'next/head'
 import PageLoader from '../components/PageLoader'
 import BaseLayer from '../components/BaseLayer'
-import Layer from '../components/Layer'
+import LayerOne from '../components/LayerOne'
+import LayerTwo from '../components/LayerTwo'
+import LayerThree from '../components/LayerThree'
 
 import { useEffect, useState } from 'react';
 import {motion, AnimatePresence} from 'framer-motion';
@@ -10,6 +12,7 @@ import styles from '../styles/Home.module.css'
 
 const layers = [{
     id:`layer-1`,
+    title:'',
     style: {
       position:'relative',
       zIndex:3,
@@ -17,6 +20,7 @@ const layers = [{
     }
   }, {
     id:`layer-2`,
+    title: '',
     style: {
       position:'relative',
       zIndex:2,
@@ -25,6 +29,7 @@ const layers = [{
   },
   {
     id:`layer-3`,
+    title:'',
     style: {
       position:'relative',
       zIndex:1,
@@ -49,16 +54,15 @@ export default function Home() {
     }
   },[])
 
-  console.log("selectedLayer", selectedLayer)
   return (
     <div className="root-container">
       <Head>
         <title>Welcome</title>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
       </Head>
       <AnimatePresence>
         { showLoader && <PageLoader show={showLoader}/>}
-      </AnimatePresence>
       { !showLoader && 
         (<main 
           className={styles.main} onClick={e=>{
@@ -67,12 +71,31 @@ export default function Home() {
         }}>
             <BaseLayer isOpen={selectedLayer === 0}/>
             {
-              layers.map((l,i)=>(
-                
-                <Layer layer={l} isOpen= {selectedLayer === i+1} index={i} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
-                ))
+              layers.map((l,i)=>{
+                switch(i) {
+                  case 0:
+                    return (
+                    <LayerOne layer={l} isOpen= {selectedLayer === i+1} index={i} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
+                    )
+                  case 1:
+                    return (
+                    <LayerTwo layer={l} isOpen= {selectedLayer === i+1} index={i} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
+                    )
+                    
+                  case 2:
+                    return (
+                    <LayerThree layer={l} isOpen= {selectedLayer === i+1} index={i} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
+                    )
+                  default:
+                    return null;
+                }
+
+              })
             }
-        </main>)}
+        </main>)
+      }
+            </AnimatePresence>
+
     </div>
   )
 }

@@ -29,7 +29,16 @@ export default ( {isOpen, layer, index, selectedLayer, setSelectedLayer} ) => {
                  
                   
                 >
-                  {layer.id}
+                  {isOpen && 
+                  	<div className={styles.contentRoot}>
+                  		<a className={styles.cvButton} onClick={(e)=>{
+                  			e.stopPropagation();
+                  			alert("Download hte CV")
+                  		}
+
+                  		}>CV <i className="fa fa-file-pdf-o"/></a>
+                  	</div>}
+
                 </motion.div>
                 )
 }

@@ -1,0 +1,38 @@
+.root {
+	display:flex;
+	flex-direction:column;
+	justify-content:flex-start;
+	color:white;
+	width:61.8%;
+
+}
+.root h4 {
+	margin:0.25rem;
+}
+.row {
+	display:flex;
+	align-items:center;
+	flex-direction:row;
+	flex-wrap:wrap;
+}
+.progressContainer {
+	position:relative;
+	top:0rem;
+	left:0rem;
+	width:100%;
+	margin:0.5rem 0;
+	border-radius:0.5rem;
+	background-color:#adadad;
+}
+.progressBar  {
+  text-align: right; /* Right-align text */
+  padding-top: 10px; /* Add top padding */
+  padding-bottom: 10px; /* Add bottom padding */
+  color: white; /* White text color */
+  background-color: #4CAF50;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+.skillDescription {
+	font-weight:300;
+	font-size:0.8rem;
+}
