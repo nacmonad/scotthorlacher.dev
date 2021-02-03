@@ -70,6 +70,10 @@ export default ( {isOpen, layer, index, selectedLayer, setSelectedLayer} ) => {
                 >
                   {isOpen && 
                   	<div className={styles.contentRoot}>
+                  		<div className={styles.closeIconWrapper}>
+                  			<i className="fa fa-close"/>
+                  		</div>
+
                   		{
                   			skills.map((skill, index)=>(<SkillCard skill={skill} index={index}/>))
                   		}

@@ -17,6 +17,7 @@
 }
 .Closed {
 	width:3rem;
+	cursor:pointer;
 }
 
 
@@ -77,4 +78,19 @@
 	background-color:white;
 	height:0.125rem;
 	border-radius:0.06125rem;
+}
+
+.closeIconWrapper {
+	position:absolute;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	top:1rem;
+	right:1rem;
+}
+
+.closeIconWrapper i {
+	font-size:2rem;
+	font-weight:200;
+	cursor:pointer;
 }

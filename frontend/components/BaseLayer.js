@@ -38,16 +38,41 @@ export default ({isOpen}) => (
 					avatar
 				</div>
 				<div className={styles.biographicalInfo}>
-					bio stuff
+					<h4>Fullstack Developer</h4>
+					<h4>Inventor</h4>
+					<h4>Entrepren</h4>
+					<h4>Itenerant Coder</h4>
+
+
 				</div>
 			</div>
 
 			<div className={styles.contentRow}>
 				<div className={styles.contentCol}>
 					<h4>Experience</h4>
+
+					<motion.div
+						className={styles.titleUnderline}
+						transition={{ delay: 0.7}}
+						initial={{ opacity: 0 , 
+							x: '-100vw',
+							}}
+						    animate={{ opacity: 1, x:0 }}
+						    exit={{ opacity: 0 }}>
+					</motion.div>
 				</div>
 				<div className={styles.contentCol}>
 					<h4>Accomplishments</h4>
+
+					<motion.div
+						className={styles.titleUnderline}
+						transition={{ delay: 0.7}}
+						initial={{ opacity: 0 , 
+							x: '-100vw',
+							}}
+						    animate={{ opacity: 1, x:0 }}
+						    exit={{ opacity: 0 }}>
+					</motion.div>
 				</div>
 
 			</div>

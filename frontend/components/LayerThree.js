@@ -31,6 +31,9 @@ export default ( {isOpen, layer, index, selectedLayer, setSelectedLayer} ) => {
                 >
                   {isOpen && 
                   	<div className={styles.contentRoot}>
+                      <div className={styles.closeIconWrapper}>
+                        <i className="fa fa-close"/>
+                      </div>
                       <h4>Drop me a line</h4>
                   		<a className={styles.emailButton} 
                   			href="mailto:admin@scotthorlacher.dev" 
