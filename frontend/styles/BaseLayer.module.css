@@ -4,6 +4,8 @@
 	flex-direction:column;
 	align-items:flex-start;
 	padding: 1rem 2rem;
+	overflow-y:scroll;
+	height:100%;
 }
 .topRow {
 	display: flex;
@@ -108,19 +110,21 @@
 .experienceRow {
 	display:flex;
 	align-items:center;
+	flex-wrap: wrap;
 
 }
-.experienceCorp {
 
+.experienceCorp {
+	margin-right:0.5rem;
 }
 .experienceTime {
-	margin:0 1rem;
 	font-size:0.8rem;
 	font-weight:300;
 }
 .experienceDescription {
 	font-size:1rem;
 	font-weight:300;
+	margin-top:0.5rem;
 }
 .uList {
     padding: 0;

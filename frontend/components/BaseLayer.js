@@ -141,43 +141,28 @@ export default ({isOpen}) => (
 						    animate={{ opacity: 1, x:0 }}
 						    exit={{ opacity: 0 }}>
 					</motion.div>
+					
+
 					<ul className={styles.uList}>
-						<li>
-							<div className={styles.experienceRow}>
-								<span className={styles.experienceCorp}>Sonity</span>
-								<span className={styles.experienceTime}>
-									<i className={`${styles.detailButton} fa fa-calendar`}/>
-									Sept 2019 - Jan 2021</span>
-							</div>
-							<div className={styles.experienceDescription}>
-								Co-founded and developed a suite of marketing automation tools for LinkedIn.  Created UI/UX, API and Selenium scripts.  DevOps.
-							</div>
-							
-						</li>
-						<li>
-							<div className={styles.experienceRow}>
-								<span className={styles.experienceCorp}>Artiste QB</span>
-								<span className={styles.experienceTime}>
-									<i className={`${styles.detailButton} fa fa-calendar`}/>
-									March 2018 - Present</span>
-							</div>
-							<div className={styles.experienceDescription}>
-								Researcher and developer.
-							</div>
-						</li>
-						<li>
-							<div className={styles.experienceRow}>
-								<span className={styles.experienceCorp}>Freelance Web Developer</span>
-								<span className={styles.experienceTime}>
-									<i className={`${styles.detailButton} fa fa-calendar`}/>
-									Jan 2016 - Present</span>
-							</div>
-							<div className={styles.experienceDescription}>
-								Providing plethora of web development related services -- such as webdesign, hosting, e-commerce.
-							</div>
-						</li>
+					{
+						experiences.map(exp=>(
+							<li key={exp.id}>
+								<div className={styles.experienceRow}>
+									<span className={styles.experienceCorp}>{exp.title}</span>
+									<span className={styles.experienceTime}>
+										<i className={`${styles.detailButton} fa fa-calendar`}/>
+										{exp.duration}</span>
+								</div>
+								<div className={styles.experienceDescription}>
+									{exp.description}
+								</div>
+							</li>
+							))
+					}
+						
 					</ul>
 				</div>
+
 				<div className={styles.contentCol}>
 					<h4>ACCOMPLISHMENTS</h4>
 
@@ -191,19 +176,21 @@ export default ({isOpen}) => (
 						    exit={{ opacity: 0 }}>
 					</motion.div>
 					<ul className={styles.uList}>
-						<li>
-							<a href="https://uspto.report/patent/grant/10,601,907" target="_blank">
-								US10601907 -- System and method for platform to securely distribute compute workload to web capable devices
-							</a>
-						</li>
-						<li>
-							<a href="https://uspto.report/patent/app/20200396079">
-								US Application 16/681541 (Pending) -- System And Method For Shared Secret Encryption And Verification Of Recordings Of Meeting Proceedings 
-							</a>
-						</li>
-
-						<li>Technical Consultant @ Palazzo Lucarini</li>
-						<li>Art Residency @ Ujazdowski</li>
+						{
+							accomplishments.map(exp=>(
+							<li key={exp.id}>
+								<div className={styles.experienceRow}>
+									<span className={styles.experienceCorp}>{exp.title}</span>
+									<span className={styles.experienceTime}>
+										<i className={`${styles.detailButton} fa fa-calendar`}/>
+										{exp.duration}</span>
+								</div>
+								<div className={styles.experienceDescription}>
+									{exp.description}
+								</div>
+							</li>
+							))
+						}
 					</ul>
 				</div>
 

@@ -70,28 +70,31 @@ export default function Home() {
           setSelectedLayer(0)
         }}>
             <BaseLayer isOpen={selectedLayer === 0}/>
-            {
-              layers.map((l,i)=>{
-                switch(i) {
-                  case 0:
-                    return (
-                    <LayerOne layer={l} isOpen= {selectedLayer === i+1} index={i} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
-                    )
-                  case 1:
-                    return (
-                    <LayerTwo layer={l} isOpen= {selectedLayer === i+1} index={i} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
-                    )
-                    
-                  case 2:
-                    return (
-                    <LayerThree layer={l} isOpen= {selectedLayer === i+1} index={i} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
-                    )
-                  default:
-                    return null;
-                }
+            <div className={styles.navLayers}>
+              {
+                layers.map((l,i)=>{
+                  switch(i) {
+                    case 0:
+                      return (
+                      <LayerOne layer={l} isOpen= {selectedLayer === i+1} index={i} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
+                      )
+                    case 1:
+                      return (
+                      <LayerTwo layer={l} isOpen= {selectedLayer === i+1} index={i} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
+                      )
+                      
+                    case 2:
+                      return (
+                      <LayerThree layer={l} isOpen= {selectedLayer === i+1} index={i} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
+                      )
+                    default:
+                      return null;
+                  }
 
-              })
+                })
             }
+          </div>
+
         </main>)
       }
             </AnimatePresence>
