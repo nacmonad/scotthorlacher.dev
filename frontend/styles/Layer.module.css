@@ -15,20 +15,48 @@
 }
 .Open {
 	width:100vw !important; 
+	display:flex;
 }
 .Closed {
 	width:3rem;
 	cursor:pointer;
 }
 
+.LayerMobile {
+	height:2rem;
+	width:100%;
+	box-shadow:	2px 0px 5px 0px rgba(50, 50, 50, 0.75);
+	transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	overflow-y:auto;
+}
+.OpenMobile {
+	height:100vh !important; 
+	width:100%;
+}
+.ClosedMobile {
+	cursor:pointer;
+	width:100%;
+}
+
 
 .contentRoot {
+	position:relative;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
 	justify-content:center;
-	height:100%;
 	width:100%;
+	color:white;
+}
+
+.contentRootCentered {
+	position:relative;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+	width:100%;
+	height:100%;
 	color:white;
 }
 .cvButton {
@@ -62,16 +90,35 @@
 	transition: all 0.2s linear;
 	cursor:pointer;
 }
-.cvButton:hover {
-	background-color:rgba(255,255,255,1);
-}
 .emailButton:hover {
 	background-color:rgba(255,255,255,1);
 }
 
+.emailButtonMobile {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	height:2rem;
+	color: blue;
+	font-weight:800;
+	font-size:1rem;
+	background-color:rgba(255,255,255,0.8);
+	padding:1rem 2rem;
+	border-radius:2rem;
+	transition: all 0.2s linear;
+	cursor:pointer;
+}
+.emailButtonMobile:hover {
+	background-color:rgba(255,255,255,1);
+}
+
+.cvButton:hover {
+	background-color:rgba(255,255,255,1);
+}
+
+
 .skillsContainer {
-	width:100%;
-	padding: 0 4rem;
+
 }
 
 .divider {

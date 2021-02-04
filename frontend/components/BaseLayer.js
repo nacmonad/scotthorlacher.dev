@@ -11,7 +11,7 @@ const experiences = [{
 	id:1,
 	title: "Sonity Ltd",
 	duration: "Sept 2019-Jan 2021",
-	description: "Co-founded and developed a suite of marketing automation tools for LinkedIn.  Created UI/UX, API and Selenium scripts.  DevOps.",
+	description: "Co-founded and developed a suite of marketing automation tools for LinkedIn.  Created UI/UX, API and Selenium scripts.  Ran support and devops for client instances on AWS.",
 	image: "Neutral Savannah.png",
 
 }, {
@@ -59,7 +59,7 @@ const accomplishments = [{
 	image: "methlab_in_trevi.jpg"
 }]
 
-export default ({isOpen}) => (
+export default ({isOpen, isMobile}) => (
 	<AnimatePresence>
 		
 		{isOpen && (
@@ -107,7 +107,7 @@ export default ({isOpen}) => (
 				    exit={{ opacity: 0 }}>
 			</motion.div>
 
-			<div className={styles.bioRow}>
+			<div className={!isMobile ? styles.bioRow : styles.bioRowMobile}>
 				<div className={styles.avatarContainer}/>
 					<motion.div
 						className={styles.rightCol}
@@ -122,14 +122,14 @@ export default ({isOpen}) => (
 							<i className={`${styles.detailButton} fa fa-map-marker`}/>
 							<span>Vancouver, British Columbia</span>
 						</div>
-						<p>Hello.  I have been using Javascript frameworks for webwork for at least 5 years now.  Formally educated in Electrical Engineering (McMaster), I enjoy working with IoT projects in order to get my hardware fix.  In general, I'm leveraging my skillsets to facilate travel, new experiences and language-learning.  Research-wise, I'm interested in cryptography and blockchain and hold multiple patents pertaining to.
+						<p>Hello.  I have been using Javascript frameworks for webwork for at least 5 years now.  Although immersed in Software Development, I was formally educated in Electrical Engineering (McMaster) and enjoy working on IoT projects in order to get my hardware fix.  In general, I'm leveraging my skillsets to facilate travel, new experiences and language-learning.  Research-wise, I'm interested in cryptography and blockchain and hold multiple patents pertaining to.
 						I'm actively searching for, and open to new opportunities.</p>
 					</motion.div>
 
 			</div>
 
 			<div className={styles.contentRow}>
-				<div className={styles.contentCol}>
+				<div className={styles.contentColMobile}>
 					<h4>EXPERIENCE</h4>
 
 					<motion.div
@@ -164,7 +164,7 @@ export default ({isOpen}) => (
 					</ul>
 				</div>
 
-				<div className={styles.contentCol}>
+				<div className={styles.contentColMobile}>
 					<h4>ACCOMPLISHMENTS</h4>
 
 					<motion.div
@@ -197,6 +197,10 @@ export default ({isOpen}) => (
 
 			</div>
 
+			<div style={{
+                      height:'6rem',
+                      width:0
+                    }}/>
 		</div>)}
 		
 

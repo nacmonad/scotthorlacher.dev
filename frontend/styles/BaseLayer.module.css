@@ -1,5 +1,12 @@
 .root {
-	width:100%;
+	display:flex;
+	flex-direction:column;
+	align-items:flex-start;
+	padding: 1rem 2rem;
+	overflow-y:scroll;
+	height:100%;
+}
+.rootMobile {
 	display:flex;
 	flex-direction:column;
 	align-items:flex-start;
@@ -35,6 +42,15 @@
 	width:100%;
 	flex-direction:row;
 	justify-content:flex-start;
+	color:white;
+	flex-wrap:wrap;
+}
+.bioRowMobile {
+	display: flex;
+	width:100%;
+	flex-direction:column;
+
+	align-items:center;
 	color:white;
 	flex-wrap:wrap;
 }
@@ -88,6 +104,12 @@
 	flex-direction:column;
 	min-width:24rem;
 	max-width:40%;
+	color:white;
+}
+.contentColMobile{
+	display:flex;
+	flex-direction:column;
+	width:100%;
 	color:white;
 }
 .detailButton {
