@@ -6,7 +6,7 @@ import SkillCard from './SkillCard';
 const skills = [{
 	title:'NodeJS',
 	description:'API development, sockets, streams, buffers oh my.',
-	icon: 'React-icon.svg',
+	icon: 'nodejs-icon.svg',
 	score:4,
 	tags: ['backend']
 },{
@@ -31,7 +31,7 @@ const skills = [{
 	title:'Data Science',
 	description:'Modeling and Statistics.  Applications of ML.',
 	score: 3,
-	icon: 'fa fa-facebook',
+	icon: 'data_science.png',
 	tags: []
 }, {
 	title:'Postgres',

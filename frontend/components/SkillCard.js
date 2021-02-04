@@ -5,7 +5,8 @@ import { motion } from 'framer-motion';
 export default ({ skill, index }) => {
 	return (
 		<div className={styles.root}>
-			<div className={styles.row}> 
+			<div className={styles.row}>
+				{skill.icon && <img className={styles.skillIcon} src={skill.icon}/> }
 				<h4>{skill.title}</h4>
 				<p className={styles.skillDescription}>{skill.description}</p>
 			</div>
