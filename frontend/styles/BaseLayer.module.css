@@ -1,5 +1,4 @@
 .root {
-	height:100%;
 	width:100%;
 	display:flex;
 	flex-direction:column;
@@ -17,6 +16,7 @@
 }
 .titleHeader {
 	color:white;
+	font-weight:900;
 }
 .titleUnderline {
 	width:100%;
@@ -45,6 +45,8 @@
 	width:18rem;
 	background-color:pink;
 	border-radius:9rem;
+	background: url('../public/scotty0_cropped.png');
+	background-size:cover;
 }
 
 .biographicalInfo {
@@ -53,6 +55,23 @@
 	justify-content: flex-start;
 	padding:1rem;
 	min-width:24rem;
+	
+}
+
+.biographicalInfoWide{
+	display:flex;
+	align-items:center;
+	justify-content: space-between;
+	padding:1rem;
+	min-width:24rem;
+
+}
+.biographicalInfoWide h4 {
+	font-weight:300;
+}
+.biographicalInfoWide i{
+	font-size:0.5rem;
+	padding: 0 0.5rem;
 	
 }
 .contentRow {
@@ -66,4 +85,48 @@
 	display:flex;
 	flex-direction:column;
 	min-width:24rem;
+	max-width:40%;
+	color:white;
+}
+.detailButton {
+	margin-right:0.5rem;
+}
+.rightCol {
+	max-width:56rem;
+	min-width:24rem;
+}
+.locationRow {
+	display: flex;
+	width:100%;
+	flex-direction:row;
+	justify-content:flex-start;
+	align-items:center;
+	color:white;
+	font-weight:300;
+}
+
+.experienceRow {
+	display:flex;
+	align-items:center;
+
+}
+.experienceCorp {
+
+}
+.experienceTime {
+	margin:0 1rem;
+	font-size:0.8rem;
+	font-weight:300;
+}
+.experienceDescription {
+	font-size:1rem;
+	font-weight:300;
+}
+.uList {
+    padding: 0;
+    list-style-type: none;
+}
+
+.uList li {
+	margin: 0 0 1rem 0;
 }
