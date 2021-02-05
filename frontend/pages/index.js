@@ -53,7 +53,7 @@ export default function Home() {
     var to = setTimeout(()=>{
       setShowLoader(false)
 
-    }, 3000);
+    }, 1250);
     return ()=> {
       clearTimeout(to);
     }
@@ -61,11 +61,6 @@ export default function Home() {
 
   return (
     <div className="root-container">
-      <Head>
-        <title>Welcome</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-      </Head>
       <AnimatePresence>
         { showLoader && <PageLoader show={showLoader}/>}
       { !showLoader && 

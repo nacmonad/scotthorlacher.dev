@@ -5,13 +5,13 @@ import EAMasonry from './EAMasonry';
 import styles from '../styles/BaseLayer.module.css'
 
 
-
+const statement = "Hello.  I'm actively searching for new projects to apply my skills in UI/API development and browser automation.  Ideally, I'd like to gain experience with a large team and CI/CD testing environment in order to improve management skills and better automate software development pipelines. I have been using Javascript frameworks to make webapps for at least 5 years now.  Although my trade is software development, I was formally educated in Electrical Engineering (McMaster) and also enjoy working on IoT projects.  In general, I'm leveraging my skillsets to facilate travel, new experiences and language-learning.  Research-wise, I'm interested in cryptography and blockchain and hold multiple patents pertaining to."
 
 const experiences = [{
 	id:1,
 	title: "Sonity Ltd",
 	duration: "Sept 2019-Jan 2021",
-	description: "Co-founded and developed a suite of marketing automation tools for LinkedIn.  Created UI, API and Selenium scripts.  Ran support and devops for client instances on AWS.",
+	description: "Co-founded and developed a suite of SaaS marketing automation tools for LinkedIn.  Created UI, API and Selenium scripts.  Ran support and devops for client instances on AWS.",
 	image: "Neutral Savannah.png",
 
 }, {
@@ -120,8 +120,7 @@ export default ({isOpen, isMobile}) => (
 							<i className={`${styles.detailButton} fa fa-map-marker`}/>
 							<span>Vancouver, British Columbia</span>
 						</div>
-						<p>Hello.  I'm actively searching for new projects and talented teams to work with.  I have been using Javascript frameworks to make webapps for at least 5 years now.  Although my trade is software development, I was formally educated in Electrical Engineering (McMaster) and also enjoy working on IoT projects.  In general, I'm leveraging my skillsets to facilate travel, new experiences and language-learning.  Research-wise, I'm interested in cryptography and blockchain and hold multiple patents pertaining to.
-						</p>
+						<p>	{statement} </p>
 					</motion.div>
 
 			</div>
