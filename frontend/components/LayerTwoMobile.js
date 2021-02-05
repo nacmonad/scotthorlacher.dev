@@ -36,12 +36,7 @@ export default ( {isOpen, layer, index, selectedLayer, setSelectedLayer} ) => {
                       <div className={styles.closeIconWrapper}>
                         <i className="fa fa-close"/>
                       </div>
-                  		<a className={styles.cvButton} onClick={(e)=>{
-                  			e.stopPropagation();
-                  			alert("PDF not available yet -- contact the webmaster.")
-                  		}
-
-                  		}>CV <i className="fa fa-file-pdf-o"/></a>
+                  		<a className={styles.cvButton} href="/scotthorlachercv.pdf" download>CV <i className="fa fa-file-pdf-o"/></a>
                   	</div>}
 
                 </motion.div>

@@ -54,7 +54,7 @@ const accomplishments = [{
 	id:7,
 	title: "Perftoran Technical Consultant at Palazzo Lucarini (Italy) and Fotopub (Slovenia).",
 	duration: "July 2020-Sept 2020",
-	description: "Provided web, security cam, internet and chemical extraction/distillation services for avant-garde international contemporary exhibition.  Aided in production of various bee propolis extracts, soaps and herbal (helicryso) tictures.",
+	description: "Provided web, security cam, internet and chemical extraction/distillation services for avant-garde international contemporary exhibition.  Aided in production of various bee propolis extracts, soaps and herbal (helicryso) distillates.",
 	href:"http://www.palazzolucarini.it/perftoran-_-petr-davydtchenko/",
 	image: "methlab_in_trevi.jpg"
 }]
@@ -82,8 +82,6 @@ export default ({isOpen, isMobile}) => (
 							<h4>Fullstack Developer</h4>
 							<i className="fa fa-circle"/>
 							<h4>Inventor</h4>
-							<i className="fa fa-circle"/>
-							<h4>Entrepreneur</h4>
 							<i className="fa fa-circle"/>
 							<h4>Itenerant Techie</h4>
 						</div> :
@@ -122,8 +120,8 @@ export default ({isOpen, isMobile}) => (
 							<i className={`${styles.detailButton} fa fa-map-marker`}/>
 							<span>Vancouver, British Columbia</span>
 						</div>
-						<p>Hello.  I have been using Javascript frameworks to make webapps for at least 5 years now.  Although my trade is software development, I was formally educated in Electrical Engineering (McMaster) and also enjoy working on IoT projects.  In general, I'm leveraging my skillsets to facilate travel, new experiences and language-learning.  Research-wise, I'm interested in cryptography and blockchain and hold multiple patents pertaining to.
-						I'm actively searching for, and open to new opportunities.</p>
+						<p>Hello.  I'm actively searching for new projects and talented teams to work with.  I have been using Javascript frameworks to make webapps for at least 5 years now.  Although my trade is software development, I was formally educated in Electrical Engineering (McMaster) and also enjoy working on IoT projects.  In general, I'm leveraging my skillsets to facilate travel, new experiences and language-learning.  Research-wise, I'm interested in cryptography and blockchain and hold multiple patents pertaining to.
+						</p>
 					</motion.div>
 
 			</div>
