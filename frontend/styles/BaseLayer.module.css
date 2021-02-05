@@ -108,12 +108,7 @@
 	max-width:40%;
 	color:white;
 }
-.contentColMobile{
-	display:flex;
-	flex-direction:column;
-	max-width:32rem;
-	color:white;
-}
+
 .detailButton {
 	margin-right:0.5rem;
 }
@@ -157,4 +152,12 @@
 
 .uList li {
 	margin: 0 0 1rem 0;
+}
+
+@media (max-width:991px) {
+	.contentCol{
+	min-width:100%;
+	max-width:100%;
+	width:100% !important;
+}
 }
