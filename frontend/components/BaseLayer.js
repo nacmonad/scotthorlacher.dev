@@ -11,7 +11,7 @@ const experiences = [{
 	id:1,
 	title: "Sonity Ltd",
 	duration: "Sept 2019-Jan 2021",
-	description: "Co-founded and developed a suite of marketing automation tools for LinkedIn.  Created UI/UX, API and Selenium scripts.  Ran support and devops for client instances on AWS.",
+	description: "Co-founded and developed a suite of marketing automation tools for LinkedIn.  Created UI, API and Selenium scripts.  Ran support and devops for client instances on AWS.",
 	image: "Neutral Savannah.png",
 
 }, {
