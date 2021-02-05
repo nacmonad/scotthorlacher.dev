@@ -1,9 +1,10 @@
-import {motion, AnimatePresence} from 'framer-motion';
-import { Media } from 'react-breakpoints'
+//import styles from '../styles/BaseLayer.module.css'
 
-import EAMasonry from './EAMasonry';
-import styles from '../styles/BaseLayer.module.css'
+import { renderToStaticMarkup } from 'react-dom/server';
 
+import styles from '../styles/CVPdf.module.css';
+
+import SkillCard from '../components/SkillCard'
 
 
 
@@ -28,6 +29,7 @@ const experiences = [{
 	description: "Continuously learning frameworks and libraries in order to get the job done.  Providing plethora of web development related services -- such as webdesign, hosting, e-commerce.  I also lend my technical services to international contemporary artists in order to help them realize their visions.",
 	href: "https://scotthorlacher.dev"
 }]
+
 const accomplishments = [{
 	id:4,
 	title: "System and method for platform to securely distribute compute workload to web capable devices",
@@ -59,12 +61,52 @@ const accomplishments = [{
 	image: "methlab_in_trevi.jpg"
 }]
 
-export default ({isOpen, isMobile}) => (
-	<AnimatePresence>
+const skills = [{
+	title:'NodeJS',
+	description:'API development, sockets, streams, buffers oh my.',
+	icon: 'nodejs-icon.svg',
+	score:4,
+	tags: ['backend']
+},{
+	title:'Docker',
+	description:'Containerization of apps and microservice architecture.',
+	icon: 'docker_icon.png',
+	score:3,
+	tags: ['backend', 'cloud']
+}, {
+	title:'ReactJS',
+	description:'Frontend UI/UX.  Realtime and responsive data-driven design, UI frameworks (Material, Semantic, Bootstrap etc).',
+	icon: 'React-icon.svg',
+	score: 4,
+	tags: ['frontend', 'ui']
+}, {
+	title:'Selenium',
+	description:'Automation for data scraping and testing.',
+	icon: 'selenium-test-automation.png',
+	score: 3.5,
+	tags: ['automation', 'testing', 'scraping']
+}, {
+	title:'Data Science',
+	description:'Modeling and Statistics.  Applications of ML.',
+	score: 3,
+	icon: 'data_science.png',
+	tags: []
+}, {
+	title:'Postgres',
+	description:'SQL database of choice.  Open to change.',
+	icon: 'postgresql-512.png',
+	score:4
+}]
+
+
+
+
+const CVPdf = () => (
 		
-		{isOpen && (
+
 		<div className={styles.root}>
-			<motion.div 
+
+			<div 
 				className={styles.topRow}
 				initial={{ opacity: 0 , transition: {
 					duration:1
@@ -75,64 +117,52 @@ export default ({isOpen, isMobile}) => (
 			    } }}>
 
 				<span className={styles.titleHeader}>scotthorlacher.dev</span>
-				<Media>
-			        {({ breakpoints, currentBreakpoint }) =>
-			          breakpoints[currentBreakpoint] > breakpoints.tablet ?
-					    <div className={styles.biographicalInfoWide}>
+				
+					    <div >
 							<h4>Fullstack Developer</h4>
-							<i className="fa fa-circle"/>
-							<h4>Inventor</h4>
-							<i className="fa fa-circle"/>
-							<h4>Entrepreneur</h4>
-							<i className="fa fa-circle"/>
-							<h4>Itenerant Techie</h4>
-						</div> :
-			          <>
-			          </>
-			        }
-			      </Media>
-				<div>
-					<a className={`${styles.socialButton} fa fa-linkedin`} href="https://www.linkedin.com/in/scott-horlacher-0b5607164" target="_blank"></a>
-					<a className={`${styles.socialButton} fa fa-github`} href="https://github.com/nacmonad" target="_blank"></a>
-				</div>
-			</motion.div>
+						</div>
+				
 
-			<motion.div
+				<div>
+					shorlacher@gmx.com
+				</div>
+			</div>
+
+
+			<div
 				className={styles.titleUnderline}
 				transition={{ delay: 0.2}}
 				initial={{ opacity: 0 , 
 					x: '-100vw',
 					}}
 				    animate={{ opacity: 1, x:0 }}
-				    exit={{ opacity: 0 }}>
-			</motion.div>
+				    exit={{ opacity: 0 }}/>
+			
 
-			<div className={!isMobile ? styles.bioRow : styles.bioRowMobile}>
-				<div className={styles.avatarContainer}/>
-					<motion.div
-						className={styles.rightCol}
-						transition={{ delay: 0.2}}
-						initial={{ opacity: 0 , 
-							
-							}}
-						    animate={{ opacity: 1 }}
-						    exit={{ opacity: 0 }}>
-					    <h4>SCOTT HORLACHER</h4>
-						<div className={styles.locationRow}>
-							<i className={`${styles.detailButton} fa fa-map-marker`}/>
-							<span>Vancouver, British Columbia</span>
-						</div>
-						<p>Hello.  I have been using Javascript frameworks to make webapps for at least 5 years now.  Although my trade is software development, I was formally educated in Electrical Engineering (McMaster) and also enjoy working on IoT projects.  In general, I'm leveraging my skillsets to facilate travel, new experiences and language-learning.  Research-wise, I'm interested in cryptography and blockchain and hold multiple patents pertaining to.
-						I'm actively searching for, and open to new opportunities.</p>
-					</motion.div>
+			<div className={styles.bioRow }>
+				<div
+					className={styles.rightCol}
+					transition={{ delay: 0.2}}
+					initial={{ opacity: 0 , 
+						
+						}}
+					    animate={{ opacity: 1 }}
+					    exit={{ opacity: 0 }}>
+				    <h4>SCOTT HORLACHER</h4>
+					<div className={styles.locationRow}>
+						<i className={`${styles.detailButton} fa fa-map-marker`}/>
+						<span>Vancouver, British Columbia</span>
+					</div>
+					<p>Hello.  I have been using Javascript frameworks to make webapps for at least 5 years now.  Although my trade is software development, I was formally educated in Electrical Engineering (McMaster) and also enjoy working on IoT projects.  In general, I'm leveraging my skillsets to facilate travel, new experiences and language-learning.  Research-wise, I'm interested in cryptography and blockchain and hold multiple patents pertaining to.
+					I'm actively searching for, and open to new opportunities.</p>
+				</div>
 
 			</div>
 
 			<div className={styles.contentRow}>
 				<div className={styles.contentCol}>
 					<h4>EXPERIENCE</h4>
-
-					<motion.div
+					<div
 						className={styles.titleUnderline}
 						transition={{ delay: 0.2}}
 						initial={{ opacity: 0 , 
@@ -140,34 +170,32 @@ export default ({isOpen, isMobile}) => (
 							}}
 						    animate={{ opacity: 1, x:0 }}
 						    exit={{ opacity: 0 }}>
-					</motion.div>
+					</div>
 					
 
 					<ul className={styles.uList}>
-					{
-						experiences.map(exp=>(
-							<li key={exp.id}>
-								<div className={styles.experienceRow}>
-									{exp.href ? <a href={exp.href} target="_blank" className={styles.experienceCorp}>{exp.title}</a> : <span className={styles.experienceCorp}>{exp.title}</span>}
-									
-									<span className={styles.experienceTime}>
-										<i className={`${styles.detailButton} fa fa-calendar`}/>
-										{exp.duration}</span>
-								</div>
-								<div className={styles.experienceDescription}>
-									{exp.description}
-								</div>
-							</li>
-							))
-					}
-						
+						{
+							experiences.map(exp=>(
+								<li key={exp.id}>
+									<div className={styles.experienceRow}>
+										{exp.href ? <a href={exp.href} target="_blank" className={styles.experienceCorp}>{exp.title}</a> : <span className={styles.experienceCorp}>{exp.title}</span>}
+										
+										<span className={styles.experienceTime}>
+											<i className={`${styles.detailButton} fa fa-calendar`}/>
+											{exp.duration}</span>
+									</div>
+									<div className={styles.experienceDescription}>
+										{exp.description}
+									</div>
+								</li>
+								))
+						}
 					</ul>
 				</div>
 
 				<div className={styles.contentCol}>
 					<h4>ACCOMPLISHMENTS</h4>
-
-					<motion.div
+					<div
 						className={styles.titleUnderline}
 						transition={{ delay: 0.2}}
 						initial={{ opacity: 0 , 
@@ -175,7 +203,7 @@ export default ({isOpen, isMobile}) => (
 							}}
 						    animate={{ opacity: 1, x:0 }}
 						    exit={{ opacity: 0 }}>
-					</motion.div>
+					</div>
 					<ul className={styles.uList}>
 						{
 							accomplishments.map(exp=>(
@@ -196,16 +224,18 @@ export default ({isOpen, isMobile}) => (
 				</div>
 
 			</div>
+              	<div className={styles.skillsRoot}>
+              	<div className={styles.skillsTitle}>
+              		<h2>Skills</h2>
+              	</div>
+              		{
+              			skills.map((skill, index)=>(<SkillCard skill={skill} index={index}/>))
+              		}
+              	</div>
+            </div>
 
-			<div style={{
-                      height:'6rem',
-                      width:0
-                    }}/>
-		</div>)}
 		
-
-
-		{!isOpen && (<div></div>)}
 	
-	
-	</AnimatePresence>)
+	)
+
+export default CVPdf;

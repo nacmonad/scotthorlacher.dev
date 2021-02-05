@@ -38,7 +38,7 @@ export default ( {isOpen, layer, index, selectedLayer, setSelectedLayer} ) => {
                       </div>
                   		<a className={styles.cvButton} onClick={(e)=>{
                   			e.stopPropagation();
-                  			alert("Download hte CV")
+                  			alert("PDF not available yet -- contact the webmaster.")
                   		}
 
                   		}>CV <i className="fa fa-file-pdf-o"/></a>

@@ -11,6 +11,7 @@ export default ( {isOpen, layer, index, selectedLayer, setSelectedLayer} ) => {
                   isOpen={isOpen} 
                   style={{
                     ...layer.style,
+                    zIndex:1
                   }}
                   onClick={(e)=>{
                     e.stopPropagation();

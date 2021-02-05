@@ -13,12 +13,19 @@ import { useEffect, useState } from 'react';
 import {motion, AnimatePresence} from 'framer-motion';
 import styles from '../styles/Home.module.css'
 
-const layers = [{
+
+
+
+export default function Home() {
+  const [showLoader, setShowLoader] = useState(false);
+  const [selectedLayer, setSelectedLayer] = useState(0);
+
+  const layers = [{
     id:`layer-1`,
     title:'',
     style: {
       //position:'relative',
-      zIndex:1,
+      //zIndex:1,
       backgroundColor:'red',
     }
   }, {
@@ -26,7 +33,7 @@ const layers = [{
     title: '',
     style: {
       //position:'relative',
-      zIndex:2,
+      //zIndex:2,
       backgroundColor:'green'
     }
   },
@@ -35,15 +42,10 @@ const layers = [{
     title:'',
     style: {
       //position:'relative',
-      zIndex:3,
+      //zIndex:3,
       backgroundColor:'blue'
     }
-  }]
-
-export default function Home() {
-  const [showLoader, setShowLoader] = useState(false);
-  const [selectedLayer, setSelectedLayer] = useState(0);
-
+  }];
 
   useEffect(()=>{
     setShowLoader(true);

@@ -11,6 +11,7 @@ export default ( {isOpen, layer, index, selectedLayer, setSelectedLayer} ) => {
                   isOpen={isOpen} 
                   style={{
                     ...layer.style,
+                    zIndex:2
                   }}
                   onClick={(e)=>{
                     e.stopPropagation();
@@ -36,7 +37,7 @@ export default ( {isOpen, layer, index, selectedLayer, setSelectedLayer} ) => {
                       </div>
                   		<a className={styles.cvButton} onClick={(e)=>{
                   			e.stopPropagation();
-                  			alert("Download hte CV")
+                  			alert("Download CV not available yet...  Be sure to contact the webmaster")
                   		}
 
                   		}>CV <i className="fa fa-file-pdf-o"/></a>
