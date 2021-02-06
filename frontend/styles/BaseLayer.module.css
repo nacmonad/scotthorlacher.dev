@@ -40,12 +40,11 @@
 	margin: 0 0.5rem;
 }
 .bioRow {
-	display: flex;
-	width:100%;
-	flex-direction:row;
-	justify-content:flex-start;
+	display:grid;
+	grid-template-columns: 1fr auto;
+
 	color:white;
-	flex-wrap:wrap;
+	
 }
 .bioRowMobile {
 	display: flex;
@@ -113,7 +112,6 @@
 	margin-right:0.5rem;
 }
 .rightCol {
-	max-width:54rem;
 	min-width:24rem;
 }
 .locationRow {

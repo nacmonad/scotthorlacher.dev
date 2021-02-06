@@ -88,7 +88,7 @@ export default ({isOpen, isMobile}) => (
 			          <>
 			          </>
 			        }
-			      </Media>
+			    </Media>
 				<div>
 					<a className={`${styles.socialButton} fa fa-linkedin`} href="https://www.linkedin.com/in/scott-horlacher-0b5607164" target="_blank"></a>
 					<a className={`${styles.socialButton} fa fa-github`} href="https://github.com/nacmonad" target="_blank"></a>
@@ -100,28 +100,29 @@ export default ({isOpen, isMobile}) => (
 				transition={{ delay: 0.2}}
 				initial={{ opacity: 0 , 
 					x: '-100vw',
+					padding: '0.06125rem'
 					}}
-				    animate={{ opacity: 1, x:0 }}
-				    exit={{ opacity: 0 }}>
+				animate={{ opacity: 1, x:0, padding: '0.06125rem' }}
+				exit={{ opacity: 0 }}>
 			</motion.div>
 
 			<div className={!isMobile ? styles.bioRow : styles.bioRowMobile}>
 				<div className={styles.avatarContainer}/>
-					<motion.div
-						className={styles.rightCol}
-						transition={{ delay: 0.2}}
-						initial={{ opacity: 0 , 
-							
-							}}
-						    animate={{ opacity: 1 }}
-						    exit={{ opacity: 0 }}>
-					    <h4>SCOTT HORLACHER</h4>
-						<div className={styles.locationRow}>
-							<i className={`${styles.detailButton} fa fa-map-marker`}/>
-							<span>Vancouver, British Columbia</span>
-						</div>
-						<p>	{statement} </p>
-					</motion.div>
+				<motion.div
+					className={styles.rightCol}
+					transition={{ delay: 0.2}}
+					initial={{ opacity: 0 , 
+						
+						}}
+					    animate={{ opacity: 1 }}
+					    exit={{ opacity: 0 }}>
+				    <h4>SCOTT HORLACHER</h4>
+					<div className={styles.locationRow}>
+						<i className={`${styles.detailButton} fa fa-map-marker`}/>
+						<span>Vancouver, British Columbia</span>
+					</div>
+					<p>	{statement} </p>
+				</motion.div>
 
 			</div>
 
