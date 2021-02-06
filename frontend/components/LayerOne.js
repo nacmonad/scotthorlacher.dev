@@ -40,7 +40,7 @@ const skills = [{
 	score:4
 }]
 
-export default ( {isOpen, layer, index, selectedLayer, setSelectedLayer} ) => {
+export default ( {isOpen, isTriggered, layer, index, selectedLayer, setSelectedLayer} ) => {
 
 	return (
 		<motion.div 
@@ -79,7 +79,7 @@ export default ( {isOpen, layer, index, selectedLayer, setSelectedLayer} ) => {
                   			skills.map((skill, index)=>(<SkillCard skill={skill} index={index}/>))
                   		}
                   	</div>}
-                  {!isOpen && <i className="fa fa-chevron-left"/>}
+                  {!isOpen && <i className={`${styles.chevron} fa fa-chevron-left`} style={{opacity: isTriggered? 1 : 0}} />}
                 </motion.div>
                 )
 }

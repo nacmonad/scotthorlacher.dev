@@ -40,7 +40,17 @@ const skills = [{
 	score:4
 }]
 
-export default ( {isOpen, layer, index, selectedLayer, setSelectedLayer} ) => {
+
+const chevronVariants = {
+  initial:{
+    opacity:0
+  },
+  animate:{
+    opacity:1
+  }
+}
+
+export default ( {isOpen, isTriggered, layer, index, selectedLayer, setSelectedLayer} ) => {
 
 	return (
 		<motion.div 
@@ -84,7 +94,7 @@ export default ( {isOpen, layer, index, selectedLayer, setSelectedLayer} ) => {
                       width:0
                     }}/>
                   	</div>}
-                  {!isOpen && <i className="fa fa-chevron-up"/>}
+                  {!isOpen && <i className={`${styles.chevron} fa fa-chevron-up`} style={{opacity: isTriggered? 1 : 0}}/>}
 
                   
                 </motion.div>

@@ -19,6 +19,8 @@ import styles from '../styles/Home.module.css'
 export default function Home() {
   const [showLoader, setShowLoader] = useState(false);
   const [selectedLayer, setSelectedLayer] = useState(0);
+  const [layerTriggers, setLayerTriggers] = useState([false,false,false]);
+
 
   const layers = [{
     id:`layer-1`,
@@ -59,6 +61,33 @@ export default function Home() {
     }
   },[])
 
+
+    useEffect(()=>{
+    //sync'd layer open chevron fade triggers
+    let t0, t1, t2;
+    const trigger = setInterval(()=>{
+      setLayerTriggers([true,false,false])
+      t0 = setTimeout(()=>{
+        setLayerTriggers([false, true, false])
+        }, 200)
+      t1 = setTimeout(()=>{
+        setLayerTriggers([false, false, true])
+        }, 400)
+      t2 = setTimeout(()=>{
+        setLayerTriggers([false, false, false])
+        }, 600)
+
+    }, 10000)
+
+
+    return ()=> {
+      clearInterval(trigger)
+      clearTimeout(t0)
+      clearTimeout(t1)
+      clearTimeout(t2)
+    }
+  },[])
+
   return (
     <div className="root-container">
       <AnimatePresence>
@@ -82,16 +111,16 @@ export default function Home() {
                         switch(i) {
                           case 0:
                             return (
-                            <LayerOne layer={l} isOpen= {selectedLayer === i+1} index={i} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
+                            <LayerOne layer={l} isOpen= {selectedLayer === i+1} index={i} isTriggered={layerTriggers[2]} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
                             )
                           case 1:
                             return (
-                            <LayerTwo layer={l} isOpen= {selectedLayer === i+1} index={i} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
+                            <LayerTwo layer={l} isOpen= {selectedLayer === i+1} index={i} isTriggered={layerTriggers[1]} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
                             )
                             
                           case 2:
                             return (
-                            <LayerThree layer={l} isOpen= {selectedLayer === i+1} index={i} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
+                            <LayerThree layer={l} isOpen= {selectedLayer === i+1} index={i} isTriggered={layerTriggers[0]} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
                             )
                           default:
                             return null;
@@ -109,9 +138,9 @@ export default function Home() {
                 }}>
                 <BaseLayer isMobile={true} isOpen={selectedLayer === 0}/>
                 <div className={styles.mobileNavLayers}>
-                  <LayerOneMobile layer={layers[0]} isOpen= {selectedLayer === 1} index={0} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
-                  <LayerTwoMobile layer={layers[1]} isOpen= {selectedLayer === 2} index={1} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
-                  <LayerThreeMobile layer={layers[2]} isOpen= {selectedLayer === 3} index={2} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
+                  <LayerOneMobile layer={layers[0]} isOpen= {selectedLayer === 1} index={0} isTriggered={layerTriggers[2]} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
+                  <LayerTwoMobile layer={layers[1]} isOpen= {selectedLayer === 2} index={1} isTriggered={layerTriggers[1]} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
+                  <LayerThreeMobile layer={layers[2]} isOpen= {selectedLayer === 3} index={2} isTriggered={layerTriggers[0]} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
 
                 </div>
                 <div className={styles.mobileSpacer}/>

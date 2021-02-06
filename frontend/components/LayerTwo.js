@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import styles from '../styles/Layer.module.css';
 
-export default ( {isOpen, layer, index, selectedLayer, setSelectedLayer} ) => {
+export default ( {isOpen, isTriggered, layer, index, selectedLayer, setSelectedLayer} ) => {
 
 	return (
 		<motion.div 
@@ -37,7 +37,7 @@ export default ( {isOpen, layer, index, selectedLayer, setSelectedLayer} ) => {
                       </div>
                   		<a className={styles.cvButton} href="/scotthorlachercv.pdf" download>CV <i className="fa fa-file-pdf-o"/></a>
                   	</div>}
-                  {!isOpen && <i className="fa fa-chevron-left"/>}
+                  {!isOpen && <i className="fa fa-chevron-left" style={{opacity: isTriggered? 1 : 0}}/>}
 
                 </motion.div>
                 )
