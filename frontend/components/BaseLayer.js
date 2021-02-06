@@ -5,7 +5,7 @@ import EAMasonry from './EAMasonry';
 import styles from '../styles/BaseLayer.module.css'
 
 
-const statement = "Hello.  I'm actively searching for new projects to apply my skills in UI/API development and browser automation.  Ideally, I'd like to gain experience with a large team and CI/CD testing environment in order to improve management skills and better automate software development pipelines. I have been using Javascript frameworks to make webapps for at least 5 years now.  Although my trade is software development, I was formally educated in Electrical Engineering (McMaster) and also enjoy working on IoT projects.  In general, I'm leveraging my skillsets to facilate travel, new experiences and language-learning.  Research-wise, I'm interested in cryptography and blockchain and hold multiple patents pertaining to."
+const statement = "Hello.  I'm actively searching for new projects to apply my skills in UI/API development and browser automation.  Ideally, I'd like to gain experience with a large team and CI/CD testing environment in order to improve management skills and better automate software development pipelines. I have been using Javascript frameworks to make webapps for at least 5 years now.  Although my trade is software development, I was formally educated in Electrical Engineering (McMaster) and also enjoy working on IoT projects.  Research-wise, I'm interested in cryptography and blockchain and hold a couple patents pertaining to."
 
 const experiences = [{
 	id:1,
