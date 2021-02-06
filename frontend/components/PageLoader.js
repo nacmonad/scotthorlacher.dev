@@ -6,11 +6,11 @@ export default ( {show} ) => {
 		<motion.div
 			id={`page-loader`}
 			initial={{ opacity: 0 , transition: {
-				duration:1
+				duration:0.5
 			}}}
 		    animate={{ opacity: 1 }}
 		    exit={{ opacity: 0, transition: {
-		    	duration:1
+		    	duration:0.5
 		    } }}
 			>
 

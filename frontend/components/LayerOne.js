@@ -65,7 +65,7 @@ export default ( {isOpen, layer, index, selectedLayer, setSelectedLayer} ) => {
                     };
                   }}
                   whileHover={{ width: isOpen ? '100vw': '4rem' }}
-
+                  
                  
                   
                 >
@@ -79,7 +79,7 @@ export default ( {isOpen, layer, index, selectedLayer, setSelectedLayer} ) => {
                   			skills.map((skill, index)=>(<SkillCard skill={skill} index={index}/>))
                   		}
                   	</div>}
-
+                  {!isOpen && <i className="fa fa-chevron-left"/>}
                 </motion.div>
                 )
 }

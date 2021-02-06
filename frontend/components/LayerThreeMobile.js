@@ -46,6 +46,7 @@ export default ( {isOpen, layer, index, selectedLayer, setSelectedLayer} ) => {
                   		}}>admin@scotthorlacher.dev</a>
                   	</div>
                   	}
+                    {!isOpen && <i className="fa fa-chevron-up"/>}
 
                 </motion.div>
                 )

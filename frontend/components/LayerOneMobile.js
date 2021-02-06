@@ -84,6 +84,7 @@ export default ( {isOpen, layer, index, selectedLayer, setSelectedLayer} ) => {
                       width:0
                     }}/>
                   	</div>}
+                  {!isOpen && <i className="fa fa-chevron-up"/>}
 
                   
                 </motion.div>

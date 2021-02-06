@@ -53,7 +53,7 @@ export default function Home() {
     var to = setTimeout(()=>{
       setShowLoader(false)
 
-    }, 1250);
+    }, 3000);
     return ()=> {
       clearTimeout(to);
     }

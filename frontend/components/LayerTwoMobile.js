@@ -38,6 +38,7 @@ export default ( {isOpen, layer, index, selectedLayer, setSelectedLayer} ) => {
                       </div>
                   		<a className={styles.cvButton} href="/scotthorlachercv.pdf" download>CV <i className="fa fa-file-pdf-o"/></a>
                   	</div>}
+                  {!isOpen && <i className="fa fa-chevron-up"/>}
 
                 </motion.div>
                 )

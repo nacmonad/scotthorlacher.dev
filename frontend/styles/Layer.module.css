@@ -20,6 +20,10 @@
 .Closed {
 	width:3rem;
 	cursor:pointer;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	color:white;
 }
 
 .LayerMobile {
@@ -36,6 +40,10 @@
 .ClosedMobile {
 	cursor:pointer;
 	width:100%;
+		display:flex;
+	align-items:center;
+	justify-content:center;
+	color:white;
 }
 
 
