@@ -23,53 +23,12 @@ export default ( {show} ) => {
 					fontSize:'8rem'
 				}}>SH</span>
 
-				<svg width="8rem" height="2rem">
-					<g>
-						<motion.circle cx={"1.5rem"} cy={"1rem"} fill="red"
-							initial={{
-								r:0
-							}}
-							animate={{
-								r:16
-							}}
-							transition={{
-								duration:1,
-								repeat:"loop",
-								r: { type:"Spring", stiffness: 10}
+			      <div className={styles.spinner}>
+			        <div className={styles.bounce1}></div>
+			        <div className={styles.bounce2}></div>
+			        <div className={styles.bounce3}></div>
+			      </div>
 
-							}}
-						/>
-						<motion.circle cx={"4rem"} cy={"1rem"} fill="green"
-						initial={{
-								r:0
-							}}
-						animate={{
-							r:16
-						}}
-						transition={{
-							r: { type:"Spring", stiffness: 10},
-							repeat:"Infinity",
-							duration:1,
-							delay:0.2
-
-
-						}}/>
-						<motion.circle cx={"6.5rem"} cy={"1rem"} fill="blue"
-							initial={{
-									r:0
-								}}
-								animate={{
-									r:16
-								}}
-								transition={{
-									r: { type:"Spring", stiffness: 10},
-									repeat:"Infinity",
-									duration:1,
-									delay:0.2
-
-								}}/>
-					</g>
-				</svg>
 			</div>
 
 			</motion.div>

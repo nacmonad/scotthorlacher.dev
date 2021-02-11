@@ -1,6 +1,6 @@
 
 import Head from 'next/head'
-import PageLoader from '../components/PageLoader'
+import PageLoader from '../components/PageLoader2'
 import BaseLayer from '../components/BaseLayer'
 import LayerOne from '../components/LayerOne'
 import LayerTwo from '../components/LayerTwo'
@@ -55,7 +55,7 @@ export default function Home() {
     var to = setTimeout(()=>{
       setShowLoader(false)
 
-    }, 3000);
+    }, 300000);
     return ()=> {
       clearTimeout(to);
     }
@@ -69,13 +69,13 @@ export default function Home() {
       setLayerTriggers([true,false,false])
       t0 = setTimeout(()=>{
         setLayerTriggers([false, true, false])
-        }, 200)
+        }, 300)
       t1 = setTimeout(()=>{
         setLayerTriggers([false, false, true])
-        }, 400)
+        }, 600)
       t2 = setTimeout(()=>{
         setLayerTriggers([false, false, false])
-        }, 600)
+        }, 900)
 
     }, 10000)
 
