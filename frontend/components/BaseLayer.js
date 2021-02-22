@@ -116,7 +116,7 @@ export default ({isOpen, isMobile}) => (
 						}}
 					    animate={{ opacity: 1 }}
 					    exit={{ opacity: 0 }}>
-				    <h4>SCOTT HORLACHER</h4>
+				    <h4 className={styles.headline}>SCOTT HORLACHER</h4>
 					<div className={styles.locationRow}>
 						<i className={`${styles.detailButton} fa fa-map-marker`}/>
 						<span>Vancouver, British Columbia</span>
@@ -128,7 +128,7 @@ export default ({isOpen, isMobile}) => (
 
 			<div className={styles.contentRow}>
 				<div className={styles.contentCol}>
-					<h4>EXPERIENCE</h4>
+					<h4 className={styles.headline}>EXPERIENCE</h4>
 
 					<motion.div
 						className={styles.titleUnderline}
@@ -163,7 +163,7 @@ export default ({isOpen, isMobile}) => (
 				</div>
 
 				<div className={styles.contentCol}>
-					<h4>ACCOMPLISHMENTS</h4>
+					<h4 className={styles.headline}>ACCOMPLISHMENTS</h4>
 
 					<motion.div
 						className={styles.titleUnderline}

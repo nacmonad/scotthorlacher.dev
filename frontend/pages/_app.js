@@ -26,8 +26,11 @@ function MyApp({ Component, pageProps }) {
 
           <link rel="shortcut icon" href="sh.ico" type="image/x-icon" />
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+          
           <link rel="preconnect" href="https://fonts.gstatic.com"/>
           <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"/>
+          <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Oswald&family=Spectral&display=swap" rel="stylesheet"/>
+
       </Head>
 	  	<Component {...pageProps} />
 	  </ReactBreakpoints>
