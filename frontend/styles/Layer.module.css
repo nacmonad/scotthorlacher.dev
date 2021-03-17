@@ -49,12 +49,15 @@
 
 .contentRoot {
 	position:relative;
+	padding:1rem;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
 	justify-content:center;
 	width:100%;
 	color:white;
+	font-family: 'Oswald', sans-serif;
+	text-transform: uppercase;
 }
 
 .contentRootCentered {

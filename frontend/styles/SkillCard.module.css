@@ -34,7 +34,9 @@
 }
 .skillDescription {
 	font-weight:300;
-	font-size:0.8rem;
+	font-size:1rem;
+	font-family: 'Helvetica', sans-serif;
+	text-transform: none;
 }
 .skillIcon {
 	width:2.5rem;

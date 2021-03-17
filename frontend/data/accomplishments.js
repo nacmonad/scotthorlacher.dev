@@ -1,4 +1,4 @@
-const accomplishments = [{
+export default [{
 	id:4,
 	title: "System and method for platform to securely distribute compute workload to web capable devices",
 	description: "A system and method for distributed computing tasks to a plurality of swarm devices.  In particular, using WebGL and browser canvas to make available the computing resources of any device with a browser.",

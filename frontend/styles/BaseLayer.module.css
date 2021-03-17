@@ -31,7 +31,8 @@
 	color:white;
 	font-weight:400;
 	letter-spacing: 0.05rem;
-	font-family: 'Alfa Slab One', cursive;
+	font-family: 'Oswald', sans-serif;
+	text-transform: uppercase;
 }
 .titleUnderline {
 	width:100%;
@@ -58,6 +59,9 @@
 	align-items:center;
 	color:white;
 	flex-wrap:wrap;
+}
+.bioRowMobile p {
+	font-weight:300;
 }
 .avatarContainer {
 	margin: 1rem;
@@ -118,6 +122,10 @@
 .rightCol {
 	min-width:24rem;
 }
+.rightCol p {
+			font-weight:300;
+
+}
 .locationRow {
 	display: flex;
 	width:100%;
@@ -125,9 +133,14 @@
 	justify-content:flex-start;
 	align-items:center;
 	color:white;
-	font-weight:300;
 }
+.locationRow p {
+		font-weight:300;
 
+}
+.locationRow span {
+	font-weight:600;
+}
 .experienceRow {
 	display:flex;
 	align-items:center;
@@ -136,6 +149,7 @@
 }
 
 .experienceCorp {
+	font-weight:600;
 	margin-right:0.5rem;
 }
 .experienceTime {
@@ -158,6 +172,7 @@
 
 .headline {
 	font-family: 'Oswald', sans-serif;
+	font-weight:400;
 }
 
 @media (max-width:991px) {
