@@ -14,9 +14,9 @@ export default [{
 	href:"https://www.artiste-qb.net/"
 }, {
 	id:3,
-	title: "Freelancer",
+	title: "Freelance",
 	duration: "Jan 2016 - Present",
-	description: "Continuously learning frameworks and libraries in order to get the job done.  Providing plethora of web development related services -- such as webdesign, hosting, e-commerce.  I also lend my technical services to international contemporary artists in order to help them realize their visions.",
+	description: "Continuously learning frameworks and libraries in order to get the job done.  Lately have been creating custom apps and fulfillment services for Shopify.  Altogether providing plethora of web development related services -- such as webdesign, hosting, e-commerce.",
 	href: "https://scotthorlacher.dev"
 }, {
 	id:6,
