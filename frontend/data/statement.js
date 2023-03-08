@@ -1,4 +1,15 @@
-export default `Hello and welcome.  In case you're here to learn about me, my name is Scott and I'm a curious problem solver that enjoys exploring the world through making things.  Over the years, I've engaged in both hardware (IoT) and software projects in both professional and creative endeavours.  In the past 5 years to present, I have been primarily relying on React, NodeJS + SQL to deliver app experiences.  In recent years, I have been highly engaged as a co-founder on a LinkedIn automation marketing SaaS which has exposed me to many challenges and responsibilities to navigate on the fly.  
-From the tech-side of things, our deployments have necessitated the use of microservice architectures in the form of containers on VM, to highly-available bare-metal Kubernetes cluster. 
-
-I'm interested in new and interesting projects to apply and continue to grow my skills in UI/API development, IoT, or Web3 context. I'm curious to gain experience with different management styles and dynamic teams in order to update my own habits of Software design, explore different paradigms and expand my skillsets.   Although my trade is software development, I was formally educated in Electrical Engineering (McMaster) and also enjoy working IoT projects, in particular related to home garden automation.  Research-wise, I'm interested in cryptography, mycology, blockchain, homebrewing and have created intellectual property in the distributed systems space.`
+export default `Hello hi. This is the e-resume of an all around problem-solver that enjoys making web apps with Javascript and following
+microservice architectures when deploying and maintaining them . In search of new full-time
+and contract opportunities where I can gain experience working with new teams, and
+management styles. Presently, I rely on React, NodeJS + SQL to deliver app experiences and
+employ microservice architectures to deploy (Kubernetes/Docker) high availability APIs
+(REST/GraphQL) on a variety of cloud platforms -- including AWS, OVH and bare-metal.
+I'm actively searching for new projects to apply my skills in UI/API development as well as
+DevOps. The crux of my LinkedIn automation tool (Sonity Ltd), uses Selenium web automation
+and am also interested in unit testing and gaining experience with CI/CD testing environment.
+The app is wrapping up beta, and will be ready for public consumption just prior to the 2023 new
+year.
+Although my trade is software development, I was formally educated in Electrical Engineering
+(McMaster) and also enjoy working on IoT projects. Research-wise -- I do try and keep up to
+date and am interested in data-science, distributive systems,blockchain and have a
+patent pertaining thereto.`

@@ -1,17 +1,18 @@
 export default [{
 	id:1,
-	title: "Sonity Ltd",
+	title: "Sonity",
+	href:"https://sonity.info",
 	duration: "Sept 2019 - Present",
 	description: "Co-founded the company and developed a suite of SaaS marketing automation tools for LinkedIn.  Development stack includes React/Material-UI for the UI, NodeJS + GraphQL with PostgreSQL for the backend and a slew of Selenium Webdriver automation scripts.  Utilized microservice architecture leveraging Docker and Kubernetes.  Ran support and devops for client instances on AWS.  " ,
 	image: "Neutral Savannah.png",
 
 }, {
 	id:2,
-	title: "Artiste QB",
-	duration: "March 2018 - Present",
-	description: "Researcher and developer producing IP.  See accomplishments.",
+	title: "AQB",
+	duration: "March 2018 - 2019",
+	description: "Researcher and developer producing IP in the distributed-systems space. AQB was focused on quantum computing and has some property in the space.  However I worked on a different project, and spun off Sonity which is held by this Corporation.",
 	image: "artiste_qb_net.png",
-	href:"https://www.artiste-qb.net/"
+	href:"https://aqb.company"
 }, {
 	id:3,
 	title: "Freelance",
