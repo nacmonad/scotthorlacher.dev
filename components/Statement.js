@@ -5,7 +5,7 @@ export default () => {
     <div className="text-white">
       <p>
         You've reached the online CV of Scott. An all around problem-solver that enjoys building tech using the latest in web-technologies. In search of new full-time and contract opportunities where I can gain experience working with new teams, and
-        management styles. Presently, I rely on Typescript, React + NextJS, NodeJS, SQL to deliver app experiences and
+        management styles. Presently I rely on Typescript, React + NextJS, NodeJS, SQL to deliver app experiences and
         use Kubernetes + Docker to deploy high availability APIs
         (REST/GraphQL) on a variety of cloud platforms (AWS, OVH and bare-metal).
         I'm actively searching for new projects to apply my skills in UI/API development as well as
