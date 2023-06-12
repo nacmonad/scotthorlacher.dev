@@ -4,9 +4,9 @@ import BaseLayer from '../components/layers/BaseLayer'
 import LayerOne from '../components/layers/LayerOne'
 import LayerTwo from '../components/layers/LayerTwo'
 import LayerThree from '../components/layers/LayerThree'
-import LayerOneMobile from '../components/LayerOneMobile'
-import LayerTwoMobile from '../components/LayerTwoMobile'
-import LayerThreeMobile from '../components/LayerThreeMobile'
+import LayerOneMobile from '../components/layers/LayerOneMobile'
+import LayerTwoMobile from '../components/layers/LayerTwoMobile'
+import LayerThreeMobile from '../components/layers/LayerThreeMobile'
 import {withBreakpoints, Media} from 'react-breakpoints'
 import { useEffect, useState } from 'react';
 import {motion, AnimatePresence} from 'framer-motion';

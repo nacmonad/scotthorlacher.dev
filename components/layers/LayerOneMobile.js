@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import styles from '../styles/Layer.module.css';
+import styles from '../../styles/Layer.module.css';
 
-import SkillCard from './cards/SkillCard';
-import skills from '../data/skills';
+import SkillCard from '../cards/SkillCard';
+import skills from '../../data/skills';
 
 const chevronVariants = {
   initial:{

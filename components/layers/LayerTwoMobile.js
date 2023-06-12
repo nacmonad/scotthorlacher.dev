@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import styles from '../styles/Layer.module.css';
+import styles from '../../styles/Layer.module.css';
 
 export default ( {isOpen, isTriggered, layer, index, selectedLayer, setSelectedLayer} ) => {
 
@@ -7,13 +7,12 @@ export default ( {isOpen, isTriggered, layer, index, selectedLayer, setSelectedL
 		<motion.div 
                   key={layer.id} 
                   id={layer.id} 
-                  className={`${styles.LayerMobile} ${isOpen ? styles.OpenMobile: styles.ClosedMobile  }`}
+                  className={`${styles.LayerMobile} ${isOpen ? styles.OpenMobile: styles.ClosedMobile }`}
                   isOpen={isOpen} 
                   style={{
                     ...layer.style,
-                    display:'flex',
                     position:'relative',
-                    //bottom:'3rem'
+                    top:isOpen ? '2rem' : 0
                   }}
                   onClick={(e)=>{
                     e.stopPropagation();
@@ -27,7 +26,7 @@ export default ( {isOpen, isTriggered, layer, index, selectedLayer, setSelectedL
                     	setSelectedLayer(index+1)
                     };
                   }}
-                  whileHover={{ height: isOpen ? '100vh': '3rem' }}
+                  whileHover={{ height: isOpen ? '96vh': '3rem' }}
 
                  
                   
@@ -37,16 +36,9 @@ export default ( {isOpen, isTriggered, layer, index, selectedLayer, setSelectedL
                       <div className={styles.closeIconWrapper}>
                         <i className="fa fa-close"/>
                       </div>
-                      <h4>Drop me a line</h4>
-                  		<a className={styles.emailButtonMobile} 
-                  			href="mailto:admin@scotthorlacher.dev" 
-                  			target="_blank"
-                  			onClick={(e)=>{
-	                  			e.stopPropagation();
-                  		}}>admin@scotthorlacher.dev</a>
-                  	</div>
-                  	}
-                    {!isOpen && <i className={`${styles.chevron} fa fa-chevron-up`} style={{opacity: isTriggered? 1 : 0}}/>}
+                  		<a className={styles.cvButton} href="/scotthorlachercv.pdf" download>CV <i className="fa fa-file-pdf-o"/></a>
+                  	</div>}
+                  {!isOpen && <i className={`${styles.chevron} fa fa-chevron-up`} style={{opacity: isTriggered? 1 : 0}}/>}
 
                 </motion.div>
                 )

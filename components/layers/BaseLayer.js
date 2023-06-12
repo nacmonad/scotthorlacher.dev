@@ -102,7 +102,7 @@ export default ({isOpen, isMobile}) => (
 
 			</div>
 
-			<div className={styles.contentRow}>
+			<div className={`${styles.contentRow} mt-2`}>
 				<div className={styles.contentCol}>
 					<h3 className={styles.headline}>EXPERIENCE</h3>
 
