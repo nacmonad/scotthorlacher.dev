@@ -4,7 +4,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 
 import styles from '../styles/CVPdf.module.css';
 
-import SkillCard from '../components/SkillCard'
+import SkillCard from '../components/cards/SkillCard'
 
 
 
