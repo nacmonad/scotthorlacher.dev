@@ -1,5 +1,9 @@
 import { motion } from 'framer-motion';
-import styles from '../styles/Layer.module.css';
+import styles from '../../styles/Layer.module.css';
+
+import SkillCard from '../cards/SkillCard';
+
+import skills from '../../data/skills';
 
 export default ( {isOpen, isTriggered, layer, index, selectedLayer, setSelectedLayer} ) => {
 
@@ -11,7 +15,7 @@ export default ( {isOpen, isTriggered, layer, index, selectedLayer, setSelectedL
                   isOpen={isOpen} 
                   style={{
                     ...layer.style,
-                    zIndex:1
+                    zIndex:3
                   }}
                   onClick={(e)=>{
                     e.stopPropagation();
@@ -26,26 +30,21 @@ export default ( {isOpen, isTriggered, layer, index, selectedLayer, setSelectedL
                     };
                   }}
                   whileHover={{ width: isOpen ? '100vw': '4rem' }}
-
+                  
                  
                   
                 >
                   {isOpen && 
                   	<div className={styles.contentRoot}>
-                      <div className={styles.closeIconWrapper}>
-                        <i className="fa fa-close"/>
-                      </div>
-                      <h4>Drop me a line</h4>
-                  		<a className={styles.emailButton} 
-                  			href="mailto:admin@scotthorlacher.dev" 
-                  			target="_blank"
-                  			onClick={(e)=>{
-	                  			e.stopPropagation();
-                  		}}>admin@scotthorlacher.dev</a>
-                  	</div>
-                  	}
-                    {!isOpen && <i className={`${styles.chevron} fa fa-chevron-left`} style={{opacity: isTriggered? 1 : 0}}/>}
-
+                  		<div className={styles.closeIconWrapper}>
+                  			<i className="fa fa-close"/>
+                  		</div>
+                      <h2>Skills</h2>
+                  		{
+                  			skills.map((skill, index)=>(<SkillCard key={`skill-${index}`} skill={skill} index={index}/>))
+                  		}
+                  	</div>}
+                  {!isOpen && <i className={`${styles.chevron} fa fa-chevron-left`} style={{opacity: isTriggered? 1 : 0}} />}
                 </motion.div>
                 )
 }

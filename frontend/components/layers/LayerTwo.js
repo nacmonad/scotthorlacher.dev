@@ -1,9 +1,5 @@
 import { motion } from 'framer-motion';
-import styles from '../styles/Layer.module.css';
-
-import SkillCard from './SkillCard';
-
-import skills from '../data/skills';
+import styles from '../../styles/Layer.module.css';
 
 export default ( {isOpen, isTriggered, layer, index, selectedLayer, setSelectedLayer} ) => {
 
@@ -15,7 +11,7 @@ export default ( {isOpen, isTriggered, layer, index, selectedLayer, setSelectedL
                   isOpen={isOpen} 
                   style={{
                     ...layer.style,
-                    zIndex:3
+                    zIndex:2
                   }}
                   onClick={(e)=>{
                     e.stopPropagation();
@@ -30,21 +26,19 @@ export default ( {isOpen, isTriggered, layer, index, selectedLayer, setSelectedL
                     };
                   }}
                   whileHover={{ width: isOpen ? '100vw': '4rem' }}
-                  
+
                  
                   
                 >
                   {isOpen && 
                   	<div className={styles.contentRoot}>
-                  		<div className={styles.closeIconWrapper}>
-                  			<i className="fa fa-close"/>
-                  		</div>
-                      <h2>Skills</h2>
-                  		{
-                  			skills.map((skill, index)=>(<SkillCard skill={skill} index={index}/>))
-                  		}
+                      <div className={styles.closeIconWrapper}>
+                        <i className="fa fa-close"/>
+                      </div>
+                  		<a className={styles.cvButton} href="/scotthorlachercv.pdf" download>CV <i className="fa fa-file-pdf-o"/></a>
                   	</div>}
-                  {!isOpen && <i className={`${styles.chevron} fa fa-chevron-left`} style={{opacity: isTriggered? 1 : 0}} />}
+                  {!isOpen && <i className="fa fa-chevron-left" style={{opacity: isTriggered? 1 : 0}}/>}
+
                 </motion.div>
                 )
 }

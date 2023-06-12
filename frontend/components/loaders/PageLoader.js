@@ -1,4 +1,4 @@
-import styles from '../styles/PageLoader.module.css';
+import styles from '../../styles/PageLoader.module.css';
 import {motion, AnimatePresence} from 'framer-motion';
 
 export default ( {show} ) => {

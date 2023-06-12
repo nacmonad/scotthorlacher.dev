@@ -1,19 +1,19 @@
 import {motion, AnimatePresence} from 'framer-motion';
 import { Media } from 'react-breakpoints'
+import Image from "next/image";
 
-import EAMasonry from './EAMasonry';
-import styles from '../styles/BaseLayer.module.css'
+import styles from '../../styles/BaseLayer.module.css'
 
-import statement from '../data/statement';
-import experiences from '../data/experiences';
-import accomplishments from '../data/accomplishments';
+import statement from '../../data/statement';
+import experiences from '../../data/experiences';
+import accomplishments from '../../data/accomplishments';
 
 
 export default ({isOpen, isMobile}) => (
 	<AnimatePresence>
 		
 		{isOpen && (
-		<div className={styles.root}>
+		<div className={styles.root}>	
 			<motion.div 
 				className={styles.topRow}
 				initial={{ opacity: 0 , transition: {
@@ -56,22 +56,48 @@ export default ({isOpen, isMobile}) => (
 				exit={{ opacity: 0 }}>
 			</motion.div>
 
-			<div className={!isMobile ? styles.bioRow : styles.bioRowMobile}>
-				<div className={styles.avatarContainer}/>
+			<div className={`grid grid-cols-1 md:grid-cols-3 gap-2`}>
+				<div id="col-1" className={`flex flex-col items-center col-span-1 `}>
+					<div className={`mt-4`}>
+						<div className={`${styles.avatarWrapper} `}>
+							<Image
+								className={styles.avatarImage}
+								src={`/qr/scotthorlacher.dev.stylized2.png`}
+								width={256}
+								height={256}
+								alt={"QR Avatar"}
+							/>
+							<div className={styles.avatarOverlay}>
+								<Image
+									src={`/scotty0_cropped.png`}
+									height={256}
+									width={256}
+									alt="Second Image"
+								/>
+							</div>
+						</div>
+					</div>
+					<div className={`relative -left-2`}>
+						<h3 className={`${styles.headline} text-white`}>SCOTT HORLACHER</h3>
+						<div className={styles.locationRow}>
+							<i className={`${styles.detailButton} fa fa-map-marker`}/>
+							<span>Vancouver, British Columbia</span>
+						</div>
+					</div>
+				</div>
+
 				<motion.div
-					className={styles.rightCol}
+					id="col-2"
+					className={`col-span-1 md:col-span-2 pt-2`}
 					transition={{ delay: 0.2}}
 					initial={{ opacity: 0 , 
 						
 						}}
 					    animate={{ opacity: 1 }}
 					    exit={{ opacity: 0 }}>
-				    <h3 className={styles.headline}>SCOTT HORLACHER</h3>
-					<div className={styles.locationRow}>
-						<i className={`${styles.detailButton} fa fa-map-marker`}/>
-						<span>Vancouver, British Columbia</span>
+					<div className={`text-white`}>
+						<p>	{statement} </p>
 					</div>
-					<p>	{statement} </p>
 				</motion.div>
 
 			</div>

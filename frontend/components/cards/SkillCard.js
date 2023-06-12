@@ -1,4 +1,4 @@
-import styles from "../styles/SkillCard.module.css";
+import styles from "../../styles/SkillCard.module.css";
 
 import { motion } from 'framer-motion';
 

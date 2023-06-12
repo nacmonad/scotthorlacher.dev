@@ -63,18 +63,39 @@
 .bioRowMobile p {
 	font-weight:300;
 }
+
 .avatarContainer {
-	margin: 1rem;
-	display:flex;
-	align-items:center;
-	justify-content:center;
-	height:18rem;
-	width:18rem;
-	background-color:pink;
-	border-radius:9rem;
-	background: url('../public/scotty0_cropped.png');
-	background-size:cover;
-}
+	position: relative;
+	width: 512px;
+	height: 512px;
+  }
+  
+  .avatarWrapper {
+	position: relative;
+  }
+  
+  .avatarImage {
+
+	transition: opacity 0.3s ease;
+  }
+  
+  .avatarOverlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+  }
+  
+  .avatarWrapper:hover .avatarImage {
+	opacity: 0;
+  }
+  
+  .avatarWrapper:hover .avatarOverlay {
+	opacity: 1;
+  }
+
+
 
 .biographicalInfo {
 	display:flex;
@@ -127,11 +148,6 @@
 
 }
 .locationRow {
-	display: flex;
-	width:100%;
-	flex-direction:row;
-	justify-content:flex-start;
-	align-items:center;
 	color:white;
 }
 .locationRow p {

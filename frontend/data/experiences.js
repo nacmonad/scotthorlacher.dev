@@ -1,7 +1,7 @@
 export default [{
 	id:1,
 	title: "Sonity",
-	href:"https://sonity.info",
+	href:"https://sonity.info?via=Scotty1234",
 	duration: "Sept 2019 - Present",
 	description: "Co-founded the company and developed a suite of SaaS marketing automation tools for LinkedIn.  Development stack includes React/Material-UI for the UI, NodeJS + GraphQL with PostgreSQL for the backend and a slew of Selenium Webdriver automation scripts.  Utilized microservice architecture leveraging Docker and Kubernetes.  Ran support and devops for client instances on AWS.  " ,
 	image: "Neutral Savannah.png",

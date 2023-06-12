@@ -1,26 +1,21 @@
 
-import Head from 'next/head'
-import PageLoader from '../components/PageLoader2'
-import BaseLayer from '../components/BaseLayer'
-import LayerOne from '../components/LayerOne'
-import LayerTwo from '../components/LayerTwo'
-import LayerThree from '../components/LayerThree'
+import PageLoader from '../components/loaders/PageLoader2'
+import BaseLayer from '../components/layers/BaseLayer'
+import LayerOne from '../components/layers/LayerOne'
+import LayerTwo from '../components/layers/LayerTwo'
+import LayerThree from '../components/layers/LayerThree'
 import LayerOneMobile from '../components/LayerOneMobile'
 import LayerTwoMobile from '../components/LayerTwoMobile'
 import LayerThreeMobile from '../components/LayerThreeMobile'
-import {Media} from 'react-breakpoints'
+import {withBreakpoints, Media} from 'react-breakpoints'
 import { useEffect, useState } from 'react';
 import {motion, AnimatePresence} from 'framer-motion';
 import styles from '../styles/Home.module.css'
 
-
-
-
-export default function Home() {
+function Home( { breakpoints, currentBreakpoint } ) {
   const [showLoader, setShowLoader] = useState(false);
   const [selectedLayer, setSelectedLayer] = useState(0);
   const [layerTriggers, setLayerTriggers] = useState([false,false,false]);
-
 
   const layers = [{
     id:`layer-1`,
@@ -88,71 +83,62 @@ export default function Home() {
     }
   },[])
 
+  const isMobile = breakpoints[currentBreakpoint] <= breakpoints.tablet;
+  console.log("media: ",  {
+    breakpoints,
+    currentBreakpoint,
+    isMobile
+  })
+
   return (
     <div className="root-container">
+
       <AnimatePresence>
         { showLoader && <PageLoader show={showLoader}/>}
-      { !showLoader && 
-        (
-            <Media>
-              {({ breakpoints, currentBreakpoint }) =>
-                breakpoints[currentBreakpoint] > breakpoints.tablet ?
-                
+        { !showLoader && 
+          <main 
+                    className={styles.main} onClick={e=>{
+                    e.stopPropagation();
+                    setSelectedLayer(0)
+                  }}>
+                  <BaseLayer isMobile={breakpoints[currentBreakpoint] > breakpoints.tablet} isOpen={selectedLayer === 0}/>
+     
+                  {!isMobile && <div className={styles.navLayers}>
+                    {
+                        layers.map((l,i)=>{
+                          switch(i) {
+                            case 0:
+                              return (
+                              <LayerOne key={l.id} layer={l} isOpen= {selectedLayer === i+1} index={i} isTriggered={layerTriggers[2]} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
+                              )
+                            case 1:
+                              return (
+                              <LayerTwo key={l.id} layer={l} isOpen= {selectedLayer === i+1} index={i} isTriggered={layerTriggers[1]} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
+                              )
+                              
+                            case 2:
+                              return (
+                              <LayerThree key={l.id} layer={l} isOpen= {selectedLayer === i+1} index={i} isTriggered={layerTriggers[0]} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
+                              )
+                            default:
+                              return null;
+                          }
 
-                <main 
-                  className={styles.main} onClick={e=>{
-                  e.stopPropagation();
-                  setSelectedLayer(0)
-                }}>
-                <BaseLayer isMobile={false} isOpen={selectedLayer === 0}/>
-                <div className={styles.navLayers}>
-                  {
-                      layers.map((l,i)=>{
-                        switch(i) {
-                          case 0:
-                            return (
-                            <LayerOne layer={l} isOpen= {selectedLayer === i+1} index={i} isTriggered={layerTriggers[2]} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
-                            )
-                          case 1:
-                            return (
-                            <LayerTwo layer={l} isOpen= {selectedLayer === i+1} index={i} isTriggered={layerTriggers[1]} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
-                            )
-                            
-                          case 2:
-                            return (
-                            <LayerThree layer={l} isOpen= {selectedLayer === i+1} index={i} isTriggered={layerTriggers[0]} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
-                            )
-                          default:
-                            return null;
-                        }
-
-                      })
-                  }
-                </div>
-              </main>
-               :
-                <main 
-                  className={styles.mobileMain} onClick={e=>{
-                  e.stopPropagation();
-                  setSelectedLayer(0)
-                }}>
-                <BaseLayer isMobile={true} isOpen={selectedLayer === 0}/>
-                <div className={styles.mobileNavLayers}>
-                  <LayerOneMobile layer={layers[0]} isOpen= {selectedLayer === 1} index={0} isTriggered={layerTriggers[2]} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
-                  <LayerTwoMobile layer={layers[1]} isOpen= {selectedLayer === 2} index={1} isTriggered={layerTriggers[1]} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
-                  <LayerThreeMobile layer={layers[2]} isOpen= {selectedLayer === 3} index={2} isTriggered={layerTriggers[0]} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
-
-                </div>
-                <div className={styles.mobileSpacer}/>
-                </main>
-              }
-            </Media>
-            
-
-        )
-      }
-            </AnimatePresence>
-
+                        })
+                    }
+                  </div>}
+                  {isMobile && 
+                    <div className={styles.mobileNavLayers}>
+                      <LayerOneMobile layer={layers[0]} isOpen= {selectedLayer === 1} index={0} isTriggered={layerTriggers[2]} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
+                      <LayerTwoMobile layer={layers[1]} isOpen= {selectedLayer === 2} index={1} isTriggered={layerTriggers[1]} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
+                      <LayerThreeMobile layer={layers[2]} isOpen= {selectedLayer === 3} index={2} isTriggered={layerTriggers[0]} selectedLayer={selectedLayer} setSelectedLayer={setSelectedLayer}/>
+                  </div>}
+        </main>
+        }
+      </AnimatePresence>
     </div>
   )
 }
+
+
+export default withBreakpoints(Home);
