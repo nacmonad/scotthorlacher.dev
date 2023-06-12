@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import styles from '../../styles/BaseLayer.module.css'
 
-import statement from '../../data/statement';
+import Statement from '../Statement';
 import experiences from '../../data/experiences';
 import accomplishments from '../../data/accomplishments';
 
@@ -95,14 +95,12 @@ export default ({isOpen, isMobile}) => (
 						}}
 					    animate={{ opacity: 1 }}
 					    exit={{ opacity: 0 }}>
-					<div className={`text-white`}>
-						<p>	{statement} </p>
-					</div>
+					<Statement/>
 				</motion.div>
 
 			</div>
 
-			<div className={`${styles.contentRow} mt-2`}>
+			<div className={`${styles.contentRow} mt-4`}>
 				<div className={styles.contentCol}>
 					<h3 className={styles.headline}>EXPERIENCE</h3>
 
